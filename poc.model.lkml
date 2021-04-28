@@ -26,11 +26,11 @@ explore: user {
     sql_on: ${user.company} = ${company._id};;
     relationship: many_to_one
   }
-  join: managers {
+  join: manager {
     from: user
     type: left_outer
     relationship: many_to_one
-    sql_on: ${user.manager} = ${managers._id} ;;
+    sql_on: ${user.manager} = ${manager._id} ;;
   }
 }
 
