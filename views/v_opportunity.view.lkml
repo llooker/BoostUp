@@ -554,4 +554,9 @@ view: v_opportunity {
     type: count
     drill_fields: [crm_metadata_opportunity_name, crm_metadata_forecast_category_name, user_name, account_name]
   }
+
+  measure: total_amount {
+    type:  sum
+    sql: ${crm_metadata_amount} ;;
+  }
 }
