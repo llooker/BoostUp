@@ -40,11 +40,11 @@ explore: v_opportunity {
     sql_on: ${v_opportunity.user} = ${user._id} ;;
     relationship: many_to_one
   }
-  join: managers {
+  join: manager {
     from: user
     type: left_outer
     relationship: many_to_one
-    sql_on: ${user.manager} = ${managers._id} ;;
+    sql_on: ${user.manager} = ${manager._id} ;;
   }
   join: v_account {
     type:  inner
