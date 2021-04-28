@@ -20,3 +20,11 @@ explore: event {
     relationship: many_to_one
   }
 }
+
+explore: v_opportunity {
+  join: user {
+    type: inner
+    sql_on: ${v_opportunity.user} = ${user._id} ;;
+    relationship: many_to_one
+  }
+}
