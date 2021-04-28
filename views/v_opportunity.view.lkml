@@ -552,7 +552,7 @@ view: v_opportunity {
 
   dimension: key_deal {
     type: yesno
-    sql: ${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Key_Deal__c ;;
+    sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Key_Deal__c AS BOOL) ;;
   }
 
   measure: count {
