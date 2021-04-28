@@ -32,4 +32,9 @@ explore: v_opportunity {
     sql_on: ${v_opportunity.account} = ${v_account._id} ;;
     relationship: many_to_one
   }
+  join: company{
+    type: inner
+    sql_on: ${v_opportunity.company} = ${company._id} ;;
+    relationship: many_to_one
+  }
 }
