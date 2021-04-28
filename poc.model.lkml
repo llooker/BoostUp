@@ -26,6 +26,12 @@ explore: user {
     sql_on: ${user.company} = ${company._id};;
     relationship: many_to_one
   }
+  join: managers {
+    from: user
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${user.manager} = ${managers._id} ;;
+  }
 }
 
 explore: v_opportunity {
@@ -33,6 +39,12 @@ explore: v_opportunity {
     type: inner
     sql_on: ${v_opportunity.user} = ${user._id} ;;
     relationship: many_to_one
+  }
+  join: managers {
+    from: user
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${user.manager} = ${managers._id} ;;
   }
   join: v_account {
     type:  inner
