@@ -56,4 +56,9 @@ explore: v_opportunity {
     sql_on: ${v_opportunity.company} = ${company._id} ;;
     relationship: many_to_one
   }
+  join: v_opportunity_update {
+    type: inner
+    sql_on: ${v_opportunity._id} = ${v_opportunity_update.opportunity};;
+    relationship: many_to_many
+  }
 }
