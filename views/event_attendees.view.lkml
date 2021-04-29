@@ -32,13 +32,18 @@ view: event_attendees {
     sql: ${TABLE}."RESPONSE_STATUS" ;;
   }
 
+  dimension: label {
+    type: string
+    sql: ISNULL(${TABLE}."DISPLAY_NAME", ${TABLE}."EMAIL")  ;;
+  }
+
   measure: count {
     type: count
-    drill_fields: [display_name]
+    drill_fields: [label]
   }
 
   measure: attendee_names {
     type: list
-    list_field: display_name
+    list_field: label
   }
 }
