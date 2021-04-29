@@ -2,6 +2,20 @@ view: v_account {
   sql_table_name: "MONGO_BOOSTUP_FIVETRAN"."V_ACCOUNT"
     ;;
 
+  dimension_group: _boostup_transformed {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: CAST(${TABLE}."_BOOSTUP_TRANSFORMED" AS TIMESTAMP_NTZ) ;;
+  }
+
   dimension: _fivetran_deleted {
     type: yesno
     sql: ${TABLE}."_FIVETRAN_DELETED" ;;
@@ -123,6 +137,21 @@ view: v_account {
   dimension: crm_metadata {
     type: string
     sql: ${TABLE}."CRM_METADATA" ;;
+  }
+
+  dimension: crm_metadata_account_id {
+    type: string
+    sql: ${TABLE}."CRM_METADATA_ACCOUNT_ID" ;;
+  }
+
+  dimension: crm_metadata_account_name {
+    type: string
+    sql: ${TABLE}."CRM_METADATA_ACCOUNT_NAME" ;;
+  }
+
+  dimension: crm_metadata_additional_fields {
+    type: string
+    sql: ${TABLE}."CRM_METADATA_ADDITIONAL_FIELDS" ;;
   }
 
   dimension_group: email_added {
@@ -417,6 +446,6 @@ view: v_account {
 
   measure: count {
     type: count
-    drill_fields: [user_name]
+    drill_fields: [user_name, crm_metadata_account_name]
   }
 }
