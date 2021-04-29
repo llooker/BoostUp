@@ -17,6 +17,16 @@ explore: event {
     sql_on: ${event.user} = ${user._id} ;;
     relationship: many_to_one
   }
+  join: v_account {
+    type: left_outer
+    sql_on: ${event.account} = ${v_account._id} ;;
+    relationship: many_to_one
+  }
+  join: v_opportunity {
+    type:  left_outer
+    sql_on: ${event.opportunity} = ${v_opportunity._id} ;;
+    relationship: many_to_one
+  }
   join: dt_account_facts {
     type: left_outer
     sql_on: ${dt_account_facts.event_account} = ${event.account} ;;
