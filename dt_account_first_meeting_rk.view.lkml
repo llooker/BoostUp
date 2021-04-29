@@ -1,6 +1,7 @@
-view: dt_account_facts_rk {
+view: dt_account_first_meeting_rk {
   derived_table: {
-    sql: SELECT _ID, ACCOUNT
+    sql: SELECT
+           *,
            ROW_NUMBER() OVER (
              PARTITION BY ACCOUNT
              ORDER BY "START" ASC
