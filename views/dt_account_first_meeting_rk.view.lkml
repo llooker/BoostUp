@@ -16,7 +16,7 @@ view: dt_account_first_meeting_rk {
     sql: ${TABLE}."ACCOUNT" ;;
   }
 
-  dimension: event_rk {
+  dimension: rk {
     hidden: yes
     type: number
     sql: ${TABLE}."RK" ;;
@@ -24,7 +24,7 @@ view: dt_account_first_meeting_rk {
 
   dimension: is_first_meeting {
     type: yesno
-    sql: ${event_rk} = 1 ;;
+    sql: ${rk} = 1 ;;
   }
 
   measure: count {
