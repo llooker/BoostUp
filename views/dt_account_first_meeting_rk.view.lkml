@@ -26,4 +26,8 @@ view: dt_account_first_meeting_rk {
     type: yesno
     sql: ${event_rk} = 1 ;;
   }
+
+  measure: count {
+    type: count
+  }
 }
