@@ -42,7 +42,7 @@ view: event_attendees {
     drill_fields: [label]
   }
 
-  measure: attendee_names {
+  measure: attendees_list {
     type: list
     list_field: label
   }
