@@ -37,6 +37,11 @@ view: event_attendees {
     sql: IFNULL(${TABLE}."DISPLAY_NAME", ${TABLE}."EMAIL")  ;;
   }
 
+  dimension: is_confirmed {
+    type: yesno
+    sql: ${response_status} IN ('accepted', 'tentative', 'tentativelyAccepted', 'organizer') ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [label]

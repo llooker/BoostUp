@@ -195,6 +195,11 @@ view: event {
     sql: ${v_account.crm_metadata_account_name} ;;
   }
 
+  dimension: is_confirmed {
+    type: yesno
+    sql: ${status} = 'confirmed' ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [summary,account_name,start_raw,attendees]
