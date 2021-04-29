@@ -34,7 +34,7 @@ explore: event {
   }
   join: dt_account_first_meeting_rk {
     type: left_outer
-    sql_on: ${dt_account_first_meeting_rk.account} = ${event.account} ;;
+    sql_on: ${dt_account_first_meeting_rk._id} = ${event._id} ;;
     relationship: many_to_one
   }
 }

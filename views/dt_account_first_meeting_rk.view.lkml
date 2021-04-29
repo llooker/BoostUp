@@ -12,6 +12,13 @@ view: dt_account_first_meeting_rk {
          WHERE ACCOUNT IS NOT NULL;;
   }
 
+  dimension: _id {
+    hidden: yes
+    type: string
+    primary_key: yes
+    sql: ${TABLE}."_ID" ;;
+  }
+
   dimension: account {
     hidden: yes
     type: string
