@@ -205,5 +205,4 @@ view: event {
     filters: [dt_account_first_meeting.is_first_meeting: "Yes"]
     drill_fields: [summary,account_name,start_raw,attendees]
   }
-
 }
