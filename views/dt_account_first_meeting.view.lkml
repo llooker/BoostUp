@@ -9,7 +9,7 @@ view: dt_account_first_meeting {
              ORDER BY "START" ASC
            ) AS RK
          FROM FIVETRAN_DATABASE.MONGO_BOOSTUP_FIVETRAN.EVENT
-         WHERE ACCOUNT IS NOT NULL;;
+         WHERE ACCOUNT IS NOT NULL AND STATUS = 'confirmed';;
   }
 
   dimension: _id {
