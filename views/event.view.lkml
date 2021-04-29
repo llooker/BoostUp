@@ -203,6 +203,7 @@ view: event {
   measure: number_of_first_meetings {
     type: count
     filters: [dt_account_first_meeting_rk.is_first_meeting: "Yes"]
+    drill_fields: [_id,start_raw,summary,attendees]
   }
 
 }

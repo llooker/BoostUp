@@ -7,7 +7,11 @@ explore: event {
     field: company
     user_attribute: company
   }
-
+  join: company{
+    type: inner
+    sql_on: ${event.company} = ${company._id} ;;
+    relationship: many_to_one
+  }
   join: user {
     type: inner
     sql_on: ${event.user} = ${user._id} ;;
