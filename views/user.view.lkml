@@ -27,6 +27,11 @@ view: user {
     sql: ${TABLE}."_ID" ;;
   }
 
+  dimension: crm_metadata_user_id {
+    type: string
+    sql: ${TABLE}."CRM_METADATA_USER_ID" ;;
+  }
+
   dimension: admin_email_domains {
     type: string
     sql: ${TABLE}."ADMIN_EMAIL_DOMAINS" ;;
