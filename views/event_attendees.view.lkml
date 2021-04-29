@@ -1,0 +1,39 @@
+view: event_attendees {
+  sql_table_name: "MONGO_BOOSTUP_FIVETRAN"."EVENT_ATTENDEES"
+    ;;
+
+  dimension: _id {
+    type: string
+    sql: ${TABLE}."_ID" ;;
+  }
+
+  dimension: display_name {
+    type: string
+    sql: ${TABLE}."DISPLAY_NAME" ;;
+  }
+
+  dimension: email {
+    type: string
+    sql: ${TABLE}."EMAIL" ;;
+  }
+
+  dimension: is_self {
+    type: yesno
+    sql: ${TABLE}."IS_SELF" ;;
+  }
+
+  dimension: organizer {
+    type: yesno
+    sql: ${TABLE}."ORGANIZER" ;;
+  }
+
+  dimension: response_status {
+    type: string
+    sql: ${TABLE}."RESPONSE_STATUS" ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: [display_name]
+  }
+}
