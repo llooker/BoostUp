@@ -192,7 +192,7 @@ view: event {
 
   dimension: account_name {
     type: string
-    sql: ${account}."CRM_METADATA_ACCOUNT_NAME" ;;
+    sql: ${v_account.crm_metadata_account_name} ;;
   }
 
   measure: count {
