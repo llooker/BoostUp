@@ -51,6 +51,11 @@ explore: user {
     relationship: many_to_one
     sql_on: ${user.manager} = ${manager._id} ;;
   }
+  join: salesforce_user {
+    type:  left_outer
+    relationship: one_to_one
+    sql_on: ${user.company} = ${salesforce_user.company} AND ${user.crm_metadata_user_id} = ${salesforce_user.user_id};;
+  }
 }
 
 explore: v_opportunity {
