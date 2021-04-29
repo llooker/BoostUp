@@ -13,7 +13,7 @@ view: dt_account_first_meeting_rk {
   dimension: account {
     hidden: yes
     type: string
-    sql: ${TABLE}."account" ;;
+    sql: ${TABLE}."ACCOUNT" ;;
   }
 
   dimension: event_rk {
