@@ -27,10 +27,10 @@ explore: event {
     sql_on: ${event.opportunity} = ${v_opportunity._id} ;;
     relationship: many_to_one
   }
-  join: dt_account_facts {
+  join: event_attendees {
     type: left_outer
-    sql_on: ${dt_account_facts.event_account} = ${event.account} ;;
-    relationship: many_to_one
+    sql_on: ${event._id} = ${event_attendees._id} ;;
+    relationship: one_to_many
   }
   join: dt_account_first_meeting {
     type: left_outer

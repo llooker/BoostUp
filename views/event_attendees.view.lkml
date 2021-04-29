@@ -36,4 +36,9 @@ view: event_attendees {
     type: count
     drill_fields: [display_name]
   }
+
+  measure: attendee_names {
+    type: list
+    list_field: display_name
+  }
 }
