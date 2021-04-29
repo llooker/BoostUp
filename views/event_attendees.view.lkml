@@ -34,7 +34,7 @@ view: event_attendees {
 
   dimension: label {
     type: string
-    sql: ISNULL(${TABLE}."DISPLAY_NAME", ${TABLE}."EMAIL")  ;;
+    sql: IFNULL(${TABLE}."DISPLAY_NAME", ${TABLE}."EMAIL")  ;;
   }
 
   measure: count {
