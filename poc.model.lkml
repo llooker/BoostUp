@@ -62,3 +62,27 @@ explore: v_opportunity {
     relationship: many_to_many
   }
 }
+
+explore: v_account {
+  join: user {
+    type: inner
+    sql_on: ${v_account.user} = ${user._id} ;;
+    relationship: many_to_one
+  }
+  join: manager {
+    from: user
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${user.manager} = ${manager._id} ;;
+  }
+  join: v_opportunity {
+    type:  inner
+    sql_on: ${v_account._id} = ${v_opportunity.account} ;;
+    relationship: one_to_many
+  }
+  join: company{
+    type: inner
+    sql_on: ${v_account.company} = ${company._id} ;;
+    relationship: many_to_one
+  }
+}
