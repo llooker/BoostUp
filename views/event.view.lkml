@@ -190,15 +190,20 @@ view: event {
     sql: ${TABLE}."USER" ;;
   }
 
+  dimension: account_name {
+    type: string
+    sql: ${account}."CRM_METADATA_ACCOUNT_NAME" ;;
+  }
+
   measure: count {
     type: count
-    drill_fields: [start_date,summary,attendees]
+    drill_fields: [summary,account_name,start_raw,attendees]
   }
 
   measure: number_of_first_meetings {
     type: count
     filters: [dt_account_first_meeting.is_first_meeting: "Yes"]
-    drill_fields: [_id,start_raw,summary,attendees]
+    drill_fields: [summary,account_name,start_raw,attendees]
   }
 
 }
