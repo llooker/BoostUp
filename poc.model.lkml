@@ -18,6 +18,11 @@ explore: event {
     sql_on: ${dt_account_facts.event_account} = ${event.account} ;;
     relationship: many_to_one
   }
+  join: dt_account_first_meeting_rk {
+    type: left_outer
+    sql_on: ${dt_account_first_meeting_rk.account} = ${event.account} ;;
+    relationship: many_to_one
+  }
 }
 
 explore: user {

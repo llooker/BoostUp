@@ -10,7 +10,7 @@ view: dt_account_first_meeting_rk {
          WHERE ACCOUNT IS NOT NULL;;
   }
 
-  dimension: event_account {
+  dimension: account {
     hidden: yes
     type: string
     sql: ${TABLE}."account" ;;
