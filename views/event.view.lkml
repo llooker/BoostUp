@@ -1,10 +1,9 @@
 view: event {
   sql_table_name: "MONGO_BOOSTUP_FIVETRAN"."EVENT"
     ;;
-  drill_fields: [recurring_event_id]
+  drill_fields: [_id]
 
   dimension: recurring_event_id {
-    primary_key: yes
     type: string
     sql: ${TABLE}."RECURRING_EVENT_ID" ;;
   }
@@ -30,6 +29,7 @@ view: event {
 
   dimension: _id {
     type: string
+    primary_key: yes
     sql: ${TABLE}."_ID" ;;
   }
 

@@ -37,6 +37,7 @@ view: v_account {
 
   dimension: _id {
     type: string
+    primary_key: yes
     sql: ${TABLE}."_ID" ;;
   }
 
