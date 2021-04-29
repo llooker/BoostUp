@@ -195,14 +195,9 @@ view: event {
     drill_fields: [start_date,summary,attendees]
   }
 
-  measure: first_meeting_date {
-    type: date_time
-    sql: MIN(${start_raw}) ;;
-  }
-
   measure: number_of_first_meetings {
     type: count
-    filters: [dt_account_first_meeting_rk.is_first_meeting: "Yes"]
+    filters: [dt_account_first_meeting.is_first_meeting: "Yes"]
     drill_fields: [_id,start_raw,summary,attendees]
   }
 

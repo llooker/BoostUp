@@ -32,9 +32,9 @@ explore: event {
     sql_on: ${dt_account_facts.event_account} = ${event.account} ;;
     relationship: many_to_one
   }
-  join: dt_account_first_meeting_rk {
+  join: dt_account_first_meeting {
     type: left_outer
-    sql_on: ${dt_account_first_meeting_rk._id} = ${event._id} ;;
+    sql_on: ${dt_account_first_meeting._id} = ${event._id} ;;
     relationship: many_to_one
   }
 }

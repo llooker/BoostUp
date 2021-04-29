@@ -1,4 +1,4 @@
-view: dt_account_first_meeting_rk {
+view: dt_account_first_meeting {
   derived_table: {
     sql: SELECT
            _ID,
