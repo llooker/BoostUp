@@ -2,6 +2,17 @@ connection: "snowflake"
 
 include: "/views/*.view.lkml"
 
+explore: event_attendees {
+  always_filter: {
+    filters: [event_attendees.response_status: "accepted"]
+  }
+  join: user {
+    type: inner
+    sql_on: ${event_attendees.email} = ${user.email} ;;
+    relationship: many_to_many
+  }
+}
+
 explore: event {
   access_filter: {
     field: company
