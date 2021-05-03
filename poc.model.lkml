@@ -21,6 +21,12 @@ explore: event_attendees {
     sql_on: ${event_attendees.email} = ${user.email} ;;
     relationship: many_to_many
   }
+  join: company{
+    type: inner
+    sql_on: ${event.company} = ${company._id} ;;
+    relationship: many_to_one
+  }
+
   join: dt_account_first_meeting {
     type: left_outer
     sql_on: ${dt_account_first_meeting._id} = ${event._id} ;;
