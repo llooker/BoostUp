@@ -40,6 +40,10 @@ explore: event {
 }
 
 explore: user {
+  access_filter: {
+    field: company
+    user_attribute: company
+  }
   join: company {
     type: inner
     sql_on: ${user.company} = ${company._id};;
@@ -59,6 +63,10 @@ explore: user {
 }
 
 explore: v_opportunity {
+  access_filter: {
+    field: company
+    user_attribute: company
+  }
   join: user {
     type: inner
     sql_on: ${v_opportunity.user} = ${user._id} ;;
@@ -88,6 +96,10 @@ explore: v_opportunity {
 }
 
 explore: v_account {
+  access_filter: {
+    field: company
+    user_attribute: company
+  }
   join: user {
     type: inner
     sql_on: ${v_account.user} = ${user._id} ;;
