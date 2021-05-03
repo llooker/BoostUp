@@ -4,12 +4,27 @@ include: "/views/*.view.lkml"
 
 explore: event_attendees {
   always_filter: {
-    filters: [event_attendees.response_status: "accepted"]
+    filters: [event_attendees.response_status: "accepted,tentative,tentativelyAccepted,organizer"]
+  }
+  join: event{
+    type: inner
+    sql_on: ${event_attendees._id} = ${event._id} ;;
+    relationship: many_to_one
+  }
+  join: v_account{
+    type: left_outer
+    sql_on: ${event.account} = ${v_account._id} ;;
+    relationship: many_to_one
   }
   join: user {
     type: inner
     sql_on: ${event_attendees.email} = ${user.email} ;;
     relationship: many_to_many
+  }
+  join: dt_account_first_meeting {
+    type: left_outer
+    sql_on: ${dt_account_first_meeting._id} = ${event._id} ;;
+    relationship: many_to_one
   }
 }
 
