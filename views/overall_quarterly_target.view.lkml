@@ -79,4 +79,9 @@ view: overall_quarterly_target {
     type: count
     drill_fields: []
   }
+
+  measure: amount {
+    type:  sum
+    sql: ${target} ;;
+  }
 }
