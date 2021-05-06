@@ -66,4 +66,27 @@ view: dt_pipeline_progress {
   filter: company {
     type: string
   }
+
+  dimension: _id {
+    hidden: yes
+    type: string
+    primary_key: yes
+    sql: ${TABLE}."_ID" ;;
+  }
+
+  dimension: target {
+    type: number
+    sql: ${TABLE}."TARGET" ;;
+  }
+
+  dimension: booked {
+    type: number
+    sql: ${TABLE}."BOOKED" ;;
+  }
+
+  dimension: forecast {
+    type: number
+    sql: ${TABLE}."FORECAST" ;;
+  }
+
 }
