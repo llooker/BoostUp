@@ -109,7 +109,7 @@ explore: user {
   }
   join: dt_pipeline_progress {
     type: left_outer
-    sql_on: ${dt_pipeline_progress._id} = ${user._id} ;;
+    sql_on: ${dt_pipeline_progress.user} = ${user._id} ;;
     relationship: one_to_one
   }
 }

@@ -61,11 +61,11 @@ view: dt_pipeline_progress {
     type: date
   }
 
-  dimension: _id {
+  dimension: user {
     hidden: yes
     type: string
     primary_key: yes
-    sql: ${TABLE}."_ID" ;;
+    sql: ${TABLE}."USER" ;;
   }
 
   dimension: target {
