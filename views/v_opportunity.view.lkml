@@ -565,4 +565,10 @@ view: v_opportunity {
     type:  sum
     sql: ${crm_metadata_amount} ;;
   }
+
+  measure: average_amount {
+    type:  average
+    sql: ${crm_metadata_amount} ;;
+  }
+
 }

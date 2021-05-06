@@ -37,6 +37,11 @@ view: event_attendees {
     sql: IFNULL(${TABLE}."DISPLAY_NAME", ${TABLE}."EMAIL")  ;;
   }
 
+  dimension: company {
+    type: string
+    sql: ${company._id} ;;
+  }
+
   dimension: is_confirmed {
     type: yesno
     sql: ${response_status} IN ('accepted', 'tentative', 'tentativelyAccepted', 'organizer') ;;
