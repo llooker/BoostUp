@@ -3,6 +3,10 @@ connection: "snowflake"
 include: "/views/*.view.lkml"
 
 explore: overall_quarterly_target {
+  access_filter: {
+    field: company
+    user_attribute: company
+  }
   join: company{
     type: inner
     sql_on: ${overall_quarterly_target.company} = ${company._id} ;;
@@ -11,6 +15,10 @@ explore: overall_quarterly_target {
 }
 
 explore: event_attendees {
+  access_filter: {
+    field: company
+    user_attribute: company
+  }
   always_filter: {
     filters: [event_attendees.response_status: "accepted,tentative,tentativelyAccepted,organizer"]
   }
