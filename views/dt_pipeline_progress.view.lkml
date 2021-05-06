@@ -40,8 +40,6 @@ view: dt_pipeline_progress {
       LEFT JOIN V_O_BOOKED ON USER._ID = V_O_BOOKED.USER
       LEFT JOIN V_O_FORECAST ON USER._ID = V_O_FORECAST.USER
       LEFT JOIN U_Q_T ON USER._ID = U_Q_T.USER
-      WHERE {% condition company %} USER.COMPANY {% endcondition %}
-
     ;;
   }
 
@@ -61,10 +59,6 @@ view: dt_pipeline_progress {
 
   filter: close_date {
     type: date
-  }
-
-  filter: company {
-    type: string
   }
 
   dimension: _id {
