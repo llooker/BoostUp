@@ -107,6 +107,11 @@ explore: user {
     relationship: one_to_one
     sql_on: ${user.company} = ${salesforce_user.company} AND ${user.crm_metadata_user_id} = ${salesforce_user.user_id};;
   }
+  join: dt_pipeline_progress {
+    type: left_outer
+    sql_on: ${dt_pipeline_progress._id} = ${user._id} ;;
+    relationship: one_to_one
+  }
 }
 
 explore: v_opportunity {
