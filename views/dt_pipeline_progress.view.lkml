@@ -83,4 +83,19 @@ view: dt_pipeline_progress {
     sql: ${TABLE}."FORECAST" ;;
   }
 
+  measure: total_booked {
+    type:  sum
+    sql: ${TABLE}.booked ;;
+  }
+
+  measure: total_target {
+    type:  sum
+    sql: ${TABLE}.target ;;
+  }
+
+  measure: total_forecast {
+    type:  sum
+    sql: ${TABLE}.forecast ;;
+  }
+
 }
