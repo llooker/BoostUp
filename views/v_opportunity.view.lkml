@@ -558,17 +558,17 @@ view: v_opportunity {
 
   dimension: product_type {
     type: string
-    sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Product_Type__C AS STRING) ;;
+    sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Product_Type__c AS STRING) ;;
   }
 
   dimension: pod {
     type: string
-    sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Pod__C AS STRING) ;;
+    sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Pod__c AS STRING) ;;
   }
 
-  dimension: greater_area {
+  dimension: greater_territory {
     type: string
-    sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Greater_Area__C AS STRING) ;;
+    sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Greater_Territory__c AS STRING) ;;
   }
 
   measure: count {
