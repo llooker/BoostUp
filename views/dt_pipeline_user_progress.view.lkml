@@ -1,4 +1,4 @@
-view: dt_pipeline_progress {
+view: dt_pipeline_user_progress {
   derived_table: {
     sql:
       WITH V_O_BOOKED AS (
