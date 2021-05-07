@@ -561,6 +561,16 @@ view: v_opportunity {
     sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Product_Type__C AS STRING) ;;
   }
 
+  dimension: pod {
+    type: string
+    sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Pod__C AS STRING) ;;
+  }
+
+  dimension: greater_area {
+    type: string
+    sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Greater_Area__C AS STRING) ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [crm_metadata_opportunity_name, crm_metadata_forecast_category_name, user_name, account_name]
