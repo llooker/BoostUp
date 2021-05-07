@@ -556,6 +556,11 @@ view: v_opportunity {
     sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Key_Deal__c AS BOOLEAN) ;;
   }
 
+  dimension: product_type {
+    type: string
+    sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Product_Type__C AS STRING) ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [crm_metadata_opportunity_name, crm_metadata_forecast_category_name, user_name, account_name]
