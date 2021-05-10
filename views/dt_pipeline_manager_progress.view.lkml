@@ -2,7 +2,7 @@ view: dt_pipeline_manager_progress {
   derived_table: {
     sql:
       WITH V_O_BOOKED AS (
-        SELECT USER.MANAGER AS USER,
+        SELECT U.MANAGER AS USER,
         COUNT(*) AS COUNT,
         SUM(CRM_METADATA_AMOUNT) AS AMOUNT
         FROM FIVETRAN_DATABASE.MONGO_BOOSTUP_FIVETRAN.V_OPPORTUNITY AS V_O
@@ -13,7 +13,7 @@ view: dt_pipeline_manager_progress {
         GROUP BY 1
       ),
       V_O_FORECAST AS (
-        SELECT USER.MANAGER AS USER,
+        SELECT U.MANAGER AS USER,
         COUNT(*) AS COUNT,
         SUM(V_O.CRM_METADATA_AMOUNT) AS AMOUNT
         FROM FIVETRAN_DATABASE.MONGO_BOOSTUP_FIVETRAN.V_OPPORTUNITY AS V_O
