@@ -128,7 +128,6 @@ explore: user {
     sql_on: ${dt_pipeline_manager_progress.user} = ${user._id} ;;
     relationship: one_to_one
   }
-
 }
 
 explore: v_opportunity {
@@ -143,9 +142,9 @@ explore: v_opportunity {
   }
   join: manager {
     from: user
-    type: inner
-    sql_on: ${v_opportunity.user} = ${user.manager} ;;
+    type: left_outer
     relationship: many_to_one
+    sql_on: ${user.manager} = ${manager._id} ;;
   }
   join: v_account {
     type:  inner
