@@ -145,7 +145,7 @@ explore: v_opportunity {
     from: user
     type: left_outer
     relationship: many_to_one
-    sql_on: ${user.manager} = ${manager._id} ;;
+    sql_on: ${v_opportunity.user} = ${user.manager} ;;
   }
   join: v_account {
     type:  inner
