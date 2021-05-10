@@ -102,6 +102,12 @@ explore: user {
     relationship: many_to_one
     sql_on: ${user.manager} = ${manager._id} ;;
   }
+  join: team_member {
+    from: user
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${user._id} = ${team_member.manager} ;;
+  }
   join: salesforce_user {
     type:  left_outer
     relationship: one_to_one
