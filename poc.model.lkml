@@ -123,6 +123,12 @@ explore: user {
     sql_on: ${dt_pipeline_user_progress.user} = ${user._id} ;;
     relationship: one_to_one
   }
+  join: dt_pipeline_manager_progress {
+    type: left_outer
+    sql_on: ${dt_pipeline_manager_progress.user} = ${user._id} ;;
+    relationship: one_to_one
+  }
+
 }
 
 explore: v_opportunity {
