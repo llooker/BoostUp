@@ -571,6 +571,11 @@ view: v_opportunity {
     sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Greater_Territory__c AS STRING) ;;
   }
 
+  dimension: sage_region {
+    type: string
+    sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Sage_Region__c AS STRING) ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [crm_metadata_opportunity_name, crm_metadata_forecast_category_name, user_name, account_name]
