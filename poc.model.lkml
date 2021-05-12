@@ -2,6 +2,8 @@ connection: "snowflake"
 
 include: "/views/*.view.lkml"
 
+explore: company {}
+
 explore: overall_quarterly_target {
   access_filter: {
     field: company
