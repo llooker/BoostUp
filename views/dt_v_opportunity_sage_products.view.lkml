@@ -15,7 +15,7 @@ view: dt_v_opportunity_sage_products {
   }
 
   dimension: sage_product {
-    type: number
+    type: string
     sql: ${TABLE}."SAGE_PRODUCT" ;;
   }
 }
