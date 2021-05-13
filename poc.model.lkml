@@ -163,6 +163,11 @@ explore: v_opportunity {
     sql_on: ${v_opportunity._id} = ${v_opportunity_update.opportunity};;
     relationship: many_to_many
   }
+  join: dt_v_opportunity_sage_products {
+    type: inner
+    sql_on: ${v_opportunity._id} = ${dt_v_opportunity_sage_products._id};;
+    relationship: one_to_many
+  }
 }
 
 explore: v_account {
