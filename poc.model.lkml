@@ -164,7 +164,7 @@ explore: v_opportunity {
     relationship: many_to_many
   }
   join: dt_v_opportunity_sage_products {
-    type: inner
+    type: left_outer
     sql_on: ${v_opportunity._id} = ${dt_v_opportunity_sage_products._id};;
     relationship: one_to_many
   }
