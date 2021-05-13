@@ -1,7 +1,7 @@
 view: dt_v_opportunity_sage_products {
   derived_table: {
     sql:
-      SELECT _ID, VALUE AS SAGE_PRODUCT
+      SELECT _ID, CAST(VALUE AS STRING) AS SAGE_PRODUCT
       FROM FIVETRAN_DATABASE.MONGO_BOOSTUP_FIVETRAN.V_OPPORTUNITY,
       LATERAL FLATTEN (INPUT => CRM_METADATA_ADDITIONAL_FIELDS:Sage_Products__c)
     ;;
