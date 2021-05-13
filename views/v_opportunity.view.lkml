@@ -584,7 +584,6 @@ view: v_opportunity {
   dimension: sage_country {
     type:  string
     sql: CAST(${TABLE}.CRM_METADATA_ADDITIONAL_FIELDS:Sage_Country__c AS STRING) ;;
-
   }
 
   measure: count {
