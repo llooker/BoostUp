@@ -1,7 +1,7 @@
 view: dt_v_opportunity_sage_products {
   derived_table: {
     sql:
-      SELECT _ID, VALUE AS PRODUCT_TYPE
+      SELECT _ID, VALUE AS SAGE_PRODUCT
       FROM FIVETRAN_DATABASE.MONGO_BOOSTUP_FIVETRAN.V_OPPORTUNITY,
       LATERAL FLATTEN (INPUT => CRM_METADATA_ADDITIONAL_FIELDS:Sage_Products__c)
       WHERE COMPANY = '607fd11d8c93f2b9cb7de2f1'
@@ -15,8 +15,8 @@ view: dt_v_opportunity_sage_products {
     sql: ${TABLE}."_ID" ;;
   }
 
-  dimension: product_type {
+  dimension: sage_product {
     type: number
-    sql: ${TABLE}."PRODUCT_TYPE" ;;
+    sql: ${TABLE}."SAGE_PRODUCT" ;;
   }
 }
